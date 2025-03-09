@@ -52,7 +52,7 @@ internal sealed class BundleDownloadCommand : AsyncCommand<BundleDownloadCommand
 
         [Description("Platform to download assets for")]
         [CommandOption("-p|--platform")]
-        [DefaultValue(Platform.Android)]
+        [DefaultValue(Platform.StandaloneWindows64)]
         public Platform AssetPlatform { get; init; }
 
         [Description("Path to store the assets into.")]
@@ -89,7 +89,7 @@ internal sealed class BundleDownloadCommand : AsyncCommand<BundleDownloadCommand
         var fullOutputPath = Path.GetFullPath(settings.OutputPath);
         Directory.CreateDirectory(fullOutputPath);
 
-        var url = $"https://asset.resleriana.com/asset/{settings.AssetVersion}/{settings.AssetPlatform}/";
+        var url = $"https://asset.resleriana.jp/asset/{settings.AssetVersion}/{settings.AssetPlatform}/";
 
         ConsoleLogger.WriteInfoLine($"Downloading catalog for version {settings.AssetVersion}.");
         var catalog = await Catalog.LoadFromVersion(url, fullOutputPath);
@@ -193,7 +193,7 @@ internal sealed class MasterDataDownloadCommand : AsyncCommand<MasterDataDownloa
             }
         }
 
-        var url = $"https://asset.resleriana.com/master_data/{settings.MasterDataVersion}";
+        var url = $"https://asset.resleriana.jp/master_data/{settings.MasterDataVersion}";
 
         ConsoleLogger.WriteInfoLine($"Downloading master data for version {settings.MasterDataVersion}.");
 
