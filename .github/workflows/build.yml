@@ -23,7 +23,7 @@ jobs:
     - name: Build
       run: dotnet publish --configuration Release --no-restore
     - name: Upload Artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: AtelierTool
         path: AtelierTool/bin/Release/net7.0/publish
