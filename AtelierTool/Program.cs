@@ -193,7 +193,7 @@ internal sealed class MasterDataDownloadCommand : AsyncCommand<MasterDataDownloa
             }
         }
 
-        var url = $"https://asset.resleriana.jp/master_data/{settings.MasterDataVersion}";
+        var url = $"https://asset.resleriana.com/master_data/{settings.MasterDataVersion}";
 
         ConsoleLogger.WriteInfoLine($"Downloading master data for version {settings.MasterDataVersion}.");
 
