@@ -40,7 +40,8 @@ internal sealed class BundleDownloadCommand : AsyncCommand<BundleDownloadCommand
     public enum Platform
     {
         Android,
-        iOS
+        iOS,
+        StandaloneWindows64
     }
 
     public sealed class Settings : CommandSettings
