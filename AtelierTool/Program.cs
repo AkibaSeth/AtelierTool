@@ -89,7 +89,7 @@ internal sealed class BundleDownloadCommand : AsyncCommand<BundleDownloadCommand
         var fullOutputPath = Path.GetFullPath(settings.OutputPath);
         Directory.CreateDirectory(fullOutputPath);
 
-        var url = $"https://asset.resleriana.jp/asset/{settings.AssetVersion}/{settings.AssetPlatform}/";
+        var url = $"https://asset.resleriana.com/asset/{settings.AssetVersion}/{settings.AssetPlatform}/";
 
         ConsoleLogger.WriteInfoLine($"Downloading catalog for version {settings.AssetVersion}.");
         var catalog = await Catalog.LoadFromVersion(url, fullOutputPath);
